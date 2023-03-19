@@ -242,7 +242,7 @@ loadPlugin().then((resolve: PluginBase[]) => {
     else console.info("設定ファイルを検証しました。エラーは見つかりませんでした。");
 
     //Rconクラス
-    rcon = new Rcon({ host: "localhost", port: settings.rconPort, password: settings.rconPassword });
+    rcon = new Rcon({ host: settings.rconHost || "localhost", port: settings.rconPort, password: settings.rconPassword });
 
     //Rcon接続（引数に「-r」が提供されたときのみ）
     if(initRconConnect) connectRcon();
